@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rg-Ra-iQv">
-                                <rect key="frame" x="100" y="604" width="175" height="48"/>
+                                <rect key="frame" x="146.5" y="604" width="82" height="48"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Speak">
@@ -36,28 +36,75 @@
                                 </items>
                             </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FVn-PY-imf">
-                                <rect key="frame" x="15" y="79" width="345" height="510"/>
+                                <rect key="frame" x="15" y="79" width="345" height="191"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="oy6-64-aYN">
+                                <rect key="frame" x="13" y="298" width="349" height="31"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="JTw-8f-WFf">
+                                <rect key="frame" x="13" y="365" width="349" height="31"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Pitch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXM-yS-PwN">
+                                <rect key="frame" x="15" y="336" width="345" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBF-qw-cfM">
+                                <rect key="frame" x="15" y="278" width="345" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4wv-mP-AOl">
+                                <rect key="frame" x="15" y="414" width="345" height="168"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="168" id="UMl-65-WcI"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="IGf-GP-RVx"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="UmB-aV-poc"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="1rg-Ra-iQv" firstAttribute="top" secondItem="FVn-PY-imf" secondAttribute="bottom" constant="15" id="6PG-Va-6ba"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FVn-PY-imf" secondAttribute="trailing" constant="15" id="FbS-jr-qN0"/>
-                            <constraint firstItem="vJX-TY-53I" firstAttribute="centerX" secondItem="FVn-PY-imf" secondAttribute="centerX" id="LtP-FG-GZM"/>
-                            <constraint firstItem="1rg-Ra-iQv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="XTe-I1-UJj"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1rg-Ra-iQv" secondAttribute="bottom" constant="15" id="ZHI-0h-2lx"/>
-                            <constraint firstItem="vJX-TY-53I" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dIP-dC-wtW"/>
-                            <constraint firstItem="FVn-PY-imf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="dL9-Xm-QHP"/>
-                            <constraint firstItem="vJX-TY-53I" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="eQA-wH-DIA"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1rg-Ra-iQv" secondAttribute="trailing" constant="100" id="wmb-K7-95P"/>
-                            <constraint firstItem="FVn-PY-imf" firstAttribute="top" secondItem="vJX-TY-53I" secondAttribute="bottom" constant="15" id="yao-1B-2aH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1rg-Ra-iQv" secondAttribute="bottom" constant="15" id="0AL-CX-Dvr"/>
+                            <constraint firstItem="vJX-TY-53I" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0mE-cm-Ljn"/>
+                            <constraint firstItem="JTw-8f-WFf" firstAttribute="leading" secondItem="PXM-yS-PwN" secondAttribute="leading" id="3yl-1r-uI0"/>
+                            <constraint firstItem="oy6-64-aYN" firstAttribute="leading" secondItem="fBF-qw-cfM" secondAttribute="leading" id="CPn-Xq-bQP"/>
+                            <constraint firstItem="fBF-qw-cfM" firstAttribute="leading" secondItem="FVn-PY-imf" secondAttribute="leading" id="EHF-Wz-BOX"/>
+                            <constraint firstItem="4wv-mP-AOl" firstAttribute="leading" secondItem="JTw-8f-WFf" secondAttribute="leading" id="T7D-6E-GTj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FVn-PY-imf" secondAttribute="trailing" constant="15" id="TDi-6m-W7o"/>
+                            <constraint firstItem="oy6-64-aYN" firstAttribute="top" secondItem="fBF-qw-cfM" secondAttribute="bottom" constant="-1" id="UCG-8K-0qH"/>
+                            <constraint firstItem="oy6-64-aYN" firstAttribute="trailing" secondItem="fBF-qw-cfM" secondAttribute="trailing" id="UEu-o2-sJj"/>
+                            <constraint firstItem="1rg-Ra-iQv" firstAttribute="top" secondItem="4wv-mP-AOl" secondAttribute="bottom" constant="22" id="VW6-At-jLN"/>
+                            <constraint firstItem="1rg-Ra-iQv" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Wyf-Bs-IXU"/>
+                            <constraint firstItem="PXM-yS-PwN" firstAttribute="trailing" secondItem="oy6-64-aYN" secondAttribute="trailing" id="X0P-VD-y8r"/>
+                            <constraint firstItem="FVn-PY-imf" firstAttribute="top" secondItem="vJX-TY-53I" secondAttribute="bottom" constant="15" id="XBk-ZM-d5l"/>
+                            <constraint firstItem="FVn-PY-imf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="XGQ-wg-Qgs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FVn-PY-imf" secondAttribute="bottom" constant="397" id="bB7-xR-rra"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vJX-TY-53I" secondAttribute="trailing" id="cbq-8E-C4m"/>
+                            <constraint firstItem="4wv-mP-AOl" firstAttribute="top" secondItem="JTw-8f-WFf" secondAttribute="bottom" constant="19" id="d78-5r-dOU"/>
+                            <constraint firstItem="4wv-mP-AOl" firstAttribute="trailing" secondItem="JTw-8f-WFf" secondAttribute="trailing" id="eAM-Vs-glA"/>
+                            <constraint firstItem="JTw-8f-WFf" firstAttribute="trailing" secondItem="PXM-yS-PwN" secondAttribute="trailing" id="j7u-1d-07S"/>
+                            <constraint firstItem="PXM-yS-PwN" firstAttribute="leading" secondItem="oy6-64-aYN" secondAttribute="leading" id="kFC-zB-dKf"/>
+                            <constraint firstItem="JTw-8f-WFf" firstAttribute="top" secondItem="PXM-yS-PwN" secondAttribute="bottom" constant="8" id="pth-GM-5W3"/>
+                            <constraint firstItem="fBF-qw-cfM" firstAttribute="top" secondItem="FVn-PY-imf" secondAttribute="bottom" constant="8" id="tDx-bW-wXG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vJX-TY-53I" secondAttribute="bottom" constant="603" id="wHI-rA-Fni"/>
+                            <constraint firstItem="PXM-yS-PwN" firstAttribute="top" secondItem="oy6-64-aYN" secondAttribute="bottom" constant="8" id="wfu-JG-Q3I"/>
+                            <constraint firstItem="fBF-qw-cfM" firstAttribute="trailing" secondItem="FVn-PY-imf" secondAttribute="trailing" id="wxr-NT-q3w"/>
+                            <constraint firstItem="vJX-TY-53I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zCC-aR-Sm6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="languagePicker" destination="4wv-mP-AOl" id="dqR-ma-xoz"/>
+                        <outlet property="pitchSlider" destination="JTw-8f-WFf" id="3yU-DT-oRI"/>
+                        <outlet property="rateSlider" destination="oy6-64-aYN" id="B7p-WN-VF4"/>
                         <outlet property="textView" destination="FVn-PY-imf" id="U2W-wJ-rU2"/>
                     </connections>
                 </viewController>
